@@ -1,9 +1,12 @@
 
+import PageLayout from "./layouts/PageLayout"
+
 function App() {
+
 
   return (
     <>
-      Navbar
+      <PageLayout />
     </>
   )
 }

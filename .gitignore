@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-components
-layouts
+# Button.jsx
+# Card.jsx
+# layouts
 Pages
