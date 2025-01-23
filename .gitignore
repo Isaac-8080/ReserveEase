@@ -22,8 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Button.jsx
-# Card.jsx
-# layouts
-Pages
