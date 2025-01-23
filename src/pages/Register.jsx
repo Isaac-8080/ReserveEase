@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import Button from "../components/Button"
 import Label from "../components/Label"
 import TextInput from "../components/TextInput"
@@ -72,9 +73,9 @@ const SignIn = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Already a member?{' '}
-            <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <NavLink to="/login" href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Log In!
-            </a>
+            </NavLink>
           </p>
 
         </div>
