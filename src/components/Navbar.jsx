@@ -40,7 +40,7 @@ const Navbar = () => {
       </div>
 
       {isOpened && (
-        <Card cardStyle="absolute right-5 top-18 w-50">
+        <Card cardStyle="absolute right-5 top-18  bg-white dark:bg-gray-800 border border-gray-300 w-50">
           <ul>
             <NavLink to="/login">
               <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100" >
