@@ -1,9 +1,11 @@
 
-const Loading = ({ message }) => {
+const Loading = () => {
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <p>{message}</p>
+      <div className="flex flex-col w-[100%] items-center justify-center h-[100vh]">
+
+        <span className="loading loading-dots loading-xl"></span>
+
       </div>
     </>
   )
