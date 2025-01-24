@@ -21,7 +21,7 @@ const SignIn = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-          <form action="#" method="POST" className="space-y-6">
+          <form className="space-y-6">
             
             {/* <div>
               <Label htmlFor="fullname" text="Full name" />
@@ -73,7 +73,7 @@ const SignIn = () => {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             Already a member?{' '}
-            <NavLink to="/login" href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <NavLink to="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Log In!
             </NavLink>
           </p>

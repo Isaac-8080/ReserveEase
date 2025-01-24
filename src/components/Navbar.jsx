@@ -26,12 +26,12 @@ const Navbar = () => {
         </div>
 
         {!isOpened ? (
-          <div onClick={handleIsOpened} className="cursor-pointer flex flex-row gap-3 border-gray-300 rounded-full py-2 px-3 items-center shadow-sm drop-shadow-sm bg-white hover:bg-[#F2F2F2]">
+          <div onClick={handleIsOpened} className="cursor-pointer flex flex-row gap-2 border-gray-300 rounded-full py-2 px-3 items-center bg-[#F2F2F2]">
             <FaRegUser className="font-bold text-xl" />
             <RiMenu3Line className="font-bold text-xl" />
           </div>
         ) : (
-          <div onClick={handleIsClosed} className="cursor-pointer flex flex-row gap-3 border-gray-300 rounded-full py-2 px-3 items-center shadow-sm drop-shadow-sm bg-white hover:bg-[#F2F2F2]">
+          <div onClick={handleIsClosed} className="cursor-pointer flex flex-row gap-2 border-gray-300 rounded-full py-2 px-3 items-center bg-[#F2F2F2]">
             <FaRegUser className="font-bold text-xl" />
             <IoMdClose className="font-bold text-xl" />
           </div>
