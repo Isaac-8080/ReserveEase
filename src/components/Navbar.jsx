@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="flex w-full px-5 md:px-10 py-3 fixed">
         
         <div className="flex-1">
-          <a className="text-xl font-bold cursor-pointer">ReserveEase</a>
+          <NavLink to="/" className="text-xl font-bold cursor-pointer">ReserveEase</NavLink>
         </div>
 
         {!isOpened ? (

@@ -1,17 +1,19 @@
+import React from "react";
+
+import RootLayout from "./RootLayout";
+import Home from "../pages/Home";
+import PageNotFound from "../pages/PageNotFound";
+import Loading from "../components/Loading";
+import SuspenseWrapper from "../components/SuspenseWrapper";
+const Register = React.lazy(() => import('../pages/Register'));
+const Login = React.lazy(() => import('../pages/Login'));
+
 import { 
   createBrowserRouter, 
   createRoutesFromElements, 
   Route, 
   RouterProvider 
-} from "react-router-dom"
-
-import React, { Suspense } from "react"
-import RootLayout from "./RootLayout"
-import Home from "../pages/Home"
-import PageNotFound from "../pages/PageNotFound"
-
-const Register = React.lazy(() => import('../pages/Register'));
-const Login = React.lazy(() => import('../pages/Login'));
+} from "react-router-dom";
 
 function PageLayout() {
 
@@ -19,23 +21,40 @@ function PageLayout() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="register" element={<Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>Loading Register...</div>}>
-          <Register />
-        </Suspense>} />
-        <Route path="login" element={<Suspense fallback={<div>Loading Login...</div>}>
-          <Login />
-        </Suspense>} />
+        <Route
+          path="home"
+          element={
+            <SuspenseWrapper fallback={<Loading message="Loading ..." />}>
+              <Home />
+            </SuspenseWrapper>
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <SuspenseWrapper fallback={<Loading message="Loading Register..." />}>
+              <Register />
+            </SuspenseWrapper>
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <SuspenseWrapper fallback={<Loading message="Loading Login..." />}>
+              <Login />
+            </SuspenseWrapper>
+          }
+        />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     )
-  )
+  );
 
   return (
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default PageLayout
+export default PageLayout;
