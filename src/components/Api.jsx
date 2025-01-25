@@ -54,6 +54,7 @@ const Api = () => {
             <div key={list.id}>
               <Card>
                 <div className="bg-[#F2F2F2] h-40 rounded-t-md"></div>
+                {/* <img src="https://media.istockphoto.com/id/2070764415/photo/abstract-waveform-data-and-technology-growth-graph-elegant-design-peach-color.jpg?s=612x612&w=0&k=20&c=rNC_u8WhqlefR6zzRHS-sKfhFXOf1S8Ya1SiNbh2--I=" className="bg-[#F2F2F2] w-full opacity-50 h-45 rounded-t-md" /> */}
                 <div className="p-5 space-y-3">
                   <div className="flex items-center gap-2 opacity-80">
                     <MdNumbers className="text-[20px] font-semibold" />
