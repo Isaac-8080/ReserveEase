@@ -13,8 +13,8 @@ const Home = () => {
           <div className="w-full h-40 md:h-60 bg-black opacity-30 rounded-3xl md:px-12"></div>
         </div>
 
-        <div className="border flex flex-row border-gray-300 w-fit rounded-full absolute items-center bg-[#FFFFFF] focus-within:border-indigo-600">
-          <TextInput id="search" name="search" type="search" placeholder="search guests number" inputStyle="py-2 pl-5 rounded-full border-0 outline-0" autoComplete="current-password" />
+        <div className="border flex flex-row w-fit rounded-full absolute items-center bg-[#FFFFFF] focus-within:border-indigo-600">
+          <TextInput id="search" name="search" type="search" placeholder="search guests number" inputStyle="py-2 dark:text-black pl-5 rounded-full border-0 outline-0" autoComplete="current-password" />
           <CiSearch className="font-black text-indigo-600 text-4xl pr-2" />
         </div>
 
