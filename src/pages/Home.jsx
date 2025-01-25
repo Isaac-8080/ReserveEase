@@ -1,4 +1,4 @@
-import Api from "../components/Api"
+// import Api from "../components/Api"
 
 const Home = () => {
   return (
