@@ -14,6 +14,7 @@ import {
   Route, 
   RouterProvider 
 } from "react-router-dom";
+import ListLoading from "../components/ListLoading";
 
 function PageLayout() {
 
@@ -24,7 +25,7 @@ function PageLayout() {
         <Route
           path="home"
           element={
-            <SuspenseWrapper fallback={<Loading message="Loading ..." />}>
+            <SuspenseWrapper fallback={<ListLoading />}>
               <Home />
             </SuspenseWrapper>
           }
@@ -32,7 +33,7 @@ function PageLayout() {
         <Route
           path="register"
           element={
-            <SuspenseWrapper fallback={<Loading message="Loading Register..." />}>
+            <SuspenseWrapper fallback={<Loading />}>
               <Register />
             </SuspenseWrapper>
           }
@@ -40,7 +41,7 @@ function PageLayout() {
         <Route
           path="login"
           element={
-            <SuspenseWrapper fallback={<Loading message="Loading Login..." />}>
+            <SuspenseWrapper fallback={<Loading />}>
               <Login />
             </SuspenseWrapper>
           }
