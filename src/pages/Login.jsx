@@ -26,7 +26,7 @@ const Login = () => {
             <div>
               <Label htmlFor="email" text="Email address" />
               <div className="mt-2">
-                <TextInput id="email" name="email" type="email" autoComplete="email" />
+                <TextInput inputStyle="block w-full rounded-lg border-0 bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" id="email" name="email" type="email" autoComplete="email" />
               </div>
             </div>
 
@@ -42,7 +42,7 @@ const Login = () => {
               </div>
 
               <div className="mt-2">
-                <TextInput id="password" name="password" type="password" autoComplete="current-password" />
+                <TextInput inputStyle="block w-full rounded-lg border-0 bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" id="password" name="password" type="password" autoComplete="current-password" />
               </div>
 
             </div>

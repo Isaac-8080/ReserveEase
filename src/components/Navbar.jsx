@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-[#1B232B] bg-white opacity-90 z-10">
+      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-[#1B232B] bg-white top-0 opacity-90 z-10">
         
         <div className="flex-1">
           <NavLink to="/" className="text-xl font-bold cursor-pointer">ReserveEase</NavLink>
@@ -42,6 +42,12 @@ const Navbar = () => {
       {isOpened && (
         <Card cardStyle="fixed right-5 top-15  bg-white dark:bg-gray-800 border border-gray-300 w-50 z-10">
           <ul>
+            <NavLink to="/">
+              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                Home
+              </li>
+            </NavLink>
+            <hr className="border-[lightgray]" />
             <NavLink to="/login">
               <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
                 Log In
@@ -51,7 +57,7 @@ const Navbar = () => {
               <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
                 Resgister
               </li>
-              </NavLink>
+            </NavLink>
             <hr className="border-[lightgray]" />
             <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">Help</li>
           </ul>
