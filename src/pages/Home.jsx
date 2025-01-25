@@ -1,12 +1,10 @@
-import Card from "../components/Card"
+import Api from "../components/Api"
 
 const Home = () => {
   return (
     <>
-      <div className="flex items-center justify-center h-[100dvh] w-full font-bold text-4xl">
-        <Card>
-          home
-        </Card>
+      <div className="grid grid-cols-2 gap-2 px-5 py-20  w-full font-bold text-4xl">
+        <Api />
       </div>
     </>
   )

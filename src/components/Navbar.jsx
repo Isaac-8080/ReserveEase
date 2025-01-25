@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex w-full px-5 md:px-10 py-3 fixed">
+      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-gray-800 bg-white opacity-90">
         
         <div className="flex-1">
           <NavLink to="/" className="text-xl font-bold cursor-pointer">ReserveEase</NavLink>
@@ -40,10 +40,10 @@ const Navbar = () => {
       </div>
 
       {isOpened && (
-        <Card cardStyle="absolute right-5 top-18  bg-white dark:bg-gray-800 border border-gray-300 w-50">
+        <Card cardStyle="fixed right-5 top-15  bg-white dark:bg-gray-800 border border-gray-300 w-50">
           <ul>
             <NavLink to="/login">
-              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100" >
+              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
                 Log In
               </li>
             </NavLink>

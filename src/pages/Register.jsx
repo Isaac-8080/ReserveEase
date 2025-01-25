@@ -71,7 +71,7 @@ const SignIn = () => {
 
           </form>
 
-          <p className="mt-10 text-center text-sm/6 text-gray-500">
+          <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-[#F2F2F2]">
             Already a member?{' '}
             <NavLink to="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Log In!
