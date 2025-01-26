@@ -7,16 +7,22 @@ import { BsClock } from "react-icons/bs";
 import { v4 as uuid } from "uuid"
 import { MdNumbers } from "react-icons/md";
 import { RiPriceTag3Line } from "react-icons/ri";
+import tableOne from "../assets/tableOne.jpg"
+import tableTwo from "../assets/tableTwo.jpg"
+import tableThree from "../assets/tableThree.jpg"
+import tableFour from "../assets/tableFour.jpg"
+import tableFive from "../assets/tableFive.jpg"
+import tableSix from "../assets/tableSix.jpg"
 
 const Api = () => {
 
   const [listing, setListing] = useState([
-    {tableNumber: 1, guests : 7, status : "available", price : 30, id : uuid()},
-    {tableNumber: 2, guests : 5, status : "available", price : 30, id : uuid()},
-    {tableNumber: 3, guests : 10, status : "available", price : 30, id : uuid()},
-    {tableNumber: 4, guests : 10, status : "Reserved", price : 30, id : uuid()},
-    {tableNumber: 5, guests : 2, status : "available", price : 30, id : uuid()},
-    {tableNumber: 6, guests : 3, status : "available", price : 30, id : uuid()},
+    {tableNumber: 1, guests : 7, status : "available", price : 30, image: tableOne, id : uuid()},
+    {tableNumber: 2, guests : 5, status : "available", price : 30, image: tableTwo, id : uuid()},
+    {tableNumber: 3, guests : 10, status : "available", price : 30, image: tableThree, id : uuid()},
+    {tableNumber: 4, guests : 10, status : "Reserved", price : 30, image: tableFour, id : uuid()},
+    {tableNumber: 5, guests : 2, status : "available", price : 30, image: tableFive, id : uuid()},
+    {tableNumber: 6, guests : 3, status : "available", price : 30, image: tableSix, id : uuid()},
   ])
 
   // useEffect(() => {
@@ -52,10 +58,9 @@ const Api = () => {
         listing.map((list) => {
           return(
             <div key={list.id}>
-              <Card>
-                <div className="bg-[#F2F2F2] h-40 rounded-t-md"></div>
-                {/* <img src="https://media.istockphoto.com/id/2070764415/photo/abstract-waveform-data-and-technology-growth-graph-elegant-design-peach-color.jpg?s=612x612&w=0&k=20&c=rNC_u8WhqlefR6zzRHS-sKfhFXOf1S8Ya1SiNbh2--I=" className="bg-[#F2F2F2] w-full opacity-50 h-45 rounded-t-md" /> */}
-                <div className="p-5 space-y-3">
+              <Card cardStyle="p-3">
+                <img src={list.image} className="w-full h-45 rounded-t-md object-cover" />
+                <div className="px-5 pt-5 space-y-3">
                   <div className="flex items-center gap-2 opacity-80">
                     <MdNumbers className="text-[20px] font-semibold" />
                     <p className="text-[16px] font-bold uppercase opacity-90">Table {list.tableNumber}</p>

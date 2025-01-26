@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-[#1B232B] bg-white top-0 opacity-90 z-10">
+      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-[#1B232B] bg-white top-0 opacity-95 z-10">
         
         <div className="flex-1">
           <NavLink to="/" className="text-xl font-bold cursor-pointer">ReserveEase</NavLink>

@@ -14,7 +14,7 @@ const SignIn = () => {
             src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
             className="mx-auto h-10 w-auto"
           /> */}
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight">
+          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-[#1E2939] dark:text-white">
             Create an account
           </h2>
         </div>
@@ -22,14 +22,7 @@ const SignIn = () => {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
           <form className="space-y-6">
-            
-            {/* <div>
-              <Label htmlFor="fullname" text="Full name" />
-              <div className="mt-2">
-                <TextInput inputStyle="block w-full rounded-lg border-0 bg-white px-3 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" id="fullname" name="fullname" type="text" autoComplete="text" />
-              </div>
-            </div> */}
-
+        
             {/* email */}
             <div>
               <Label htmlFor="email" text="Email address" />
