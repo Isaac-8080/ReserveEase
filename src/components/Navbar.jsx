@@ -40,28 +40,36 @@ const Navbar = () => {
       </div>
 
       {isOpened && (
-        <Card cardStyle="fixed right-5 top-15  bg-white dark:bg-gray-800 border border-gray-300 w-50 z-10">
-          <ul>
-            <NavLink to="/">
-              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
-                Home
-              </li>
-            </NavLink>
-            <hr className="border-[lightgray]" />
-            <NavLink to="/login">
-              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
-                Log In
-              </li>
-            </NavLink>
-            <NavLink to="/register">
-              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
-                Resgister
-              </li>
-            </NavLink>
-            <hr className="border-[lightgray]" />
-            <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">Help</li>
-          </ul>
-        </Card>
+        <div className="flex">
+          <div onClick={handleIsClosed} className="h-screen w-full bg-black fixed z-10 opacity-10 transition-all ease-in-out duration-1000"></div>
+          <Card cardStyle="fixed right-10 top-15  bg-white dark:bg-gray-800 border border-gray-300 w-50 z-10">
+            <ul>
+              <NavLink to="/">
+                <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                  Home
+                </li>
+              </NavLink>
+              <NavLink to="/">
+                <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                  My Resevations
+                </li>
+              </NavLink>
+              <hr className="border-[lightgray]" />
+              <NavLink to="/login">
+                <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                  Log In
+                </li>
+              </NavLink>
+              <NavLink to="/register">
+                <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                  Resgister
+                </li>
+              </NavLink>
+              <hr className="border-[lightgray]" />
+              <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">Help</li>
+            </ul>
+          </Card>
+        </div>
       )}
     </>
   )

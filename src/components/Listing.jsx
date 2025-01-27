@@ -58,9 +58,9 @@ const Listing = () => {
         listing.map((list) => {
           return(
             <div key={list.id}>
-              <Card cardStyle="p-3 bg-[#F2F2F2] dark:bg-[#19191B]">
+              <Card cardStyle="p-5 bg-[#F2F2F2] dark:bg-[#19191B]">
                 <img src={list.image} className="w-full h-45 rounded-md object-cover" />
-                <div className="px-5 pt-5 space-y-3">
+                <div className="px-3 pt-5 space-y-3">
                   <div className="flex items-center gap-2 opacity-80">
                     <MdNumbers className="text-[20px] font-semibold" />
                     <p className="text-[16px] font-bold uppercase opacity-90">Table {list.tableNumber}</p>
