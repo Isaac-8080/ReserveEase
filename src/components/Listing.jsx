@@ -14,7 +14,7 @@ import tableFour from "../assets/tableFour.jpg"
 import tableFive from "../assets/tableFive.jpg"
 import tableSix from "../assets/tableSix.jpg"
 
-const Api = () => {
+const Listing = () => {
 
   const [listing, setListing] = useState([
     {tableNumber: 1, guests : 7, status : "available", price : 30, image: tableOne, id : uuid()},
@@ -58,8 +58,8 @@ const Api = () => {
         listing.map((list) => {
           return(
             <div key={list.id}>
-              <Card cardStyle="p-3">
-                <img src={list.image} className="w-full h-45 rounded-t-md object-cover" />
+              <Card cardStyle="p-3 bg-[#F2F2F2] dark:bg-[#19191B]">
+                <img src={list.image} className="w-full h-45 rounded-md object-cover" />
                 <div className="px-5 pt-5 space-y-3">
                   <div className="flex items-center gap-2 opacity-80">
                     <MdNumbers className="text-[20px] font-semibold" />
@@ -102,4 +102,4 @@ const Api = () => {
   )
 }
 
-export default Api
+export default Listing
