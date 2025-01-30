@@ -1,37 +1,60 @@
-import Card from "../components/Card"
+import { useContext } from "react";
+import Card from "../components/Card";
+import { ReservationsContext } from "../App";
+import { GrGroup } from "react-icons/gr";
+import { MdNumbers } from "react-icons/md";
+import { RiPriceTag3Line } from "react-icons/ri";
+import { IoMdClose } from "react-icons/io";
 
-const Reservations = () => {
+const Reservations = ({handleIsReservationClosed}) => {
+  const { reservationList } = useContext(ReservationsContext);
+
   return (
-    <>
-      <div className="flex flex-col items-center justify-center p-5">
+    <div className="flex">
+      <div className="bg-white w-full h-screen overflow-auto p-5 md:w-[400px] fixed md:right-0 dark:bg-gray-800 shadow-sm z-20">
 
-        <div>
+        <div className="flex flex-row mb-3 items-center justify-between">
 
-          <div className="mt-20">My Reservations</div>
-
-          <Card cardStyle="py-3 px-5 w-full md:w-[500px]">
-
-            <div>
-              reservation id
-            </div>
-
-            <div className="flex">
-              <div>date icon</div>
-              <div>date</div>
-            </div>
-
-            <div className="flex">
-              <div>guests icon</div>
-              <div>no. of guests</div>
-            </div>
-
-          </Card>
-
+          <div className="font-bold text-xl">My Reservations</div>
+          <IoMdClose onClick={handleIsReservationClosed} />
         </div>
 
-      </div>
-    </>
-  )
-}
+        {reservationList.length === 0 ? (
+          <p className="text-gray-500"> No reservations yet.</p>
+        ) : (
+          reservationList.map((reservedTable) => (
+            <Card key={reservedTable.tableId} cardStyle="p-3 mb-3">
+              <div className="flex gap-3 items-center">
+                <div className="flex items-center">
+                  <img src={reservedTable.tableImage} className="text-[16px] rounded-md w-30 font-semibold"  />
+                </div>
 
-export default Reservations
+                <div>
+                  {/* Table Number */}
+                  <div className="flex items-center gap-2">
+                    <MdNumbers className="text-[20px] text-blue-600" />
+                    <p className="text-[16px] font-semibold">Table {reservedTable.tableNumber}</p>
+                  </div>
+
+                  {/* Guest Capacity */}
+                  <div className="flex items-center gap-2">
+                    <GrGroup className="text-[20px] text-blue-600" />
+                    <p className="text-[16px] font-semibold">{reservedTable.tableGuests} guests</p>
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-center gap-2">
+                    <RiPriceTag3Line className="text-[20px] text-blue-600" />
+                    <p className="text-[16px] font-semibold text-indigo-700">${reservedTable.tablePrice}</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Reservations;
