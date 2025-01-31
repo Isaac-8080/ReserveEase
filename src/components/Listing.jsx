@@ -29,11 +29,11 @@ const Listing = () => {
   const { handleAddList } = useContext(ReservationsContext)
 
   // Handle Reservation
-  const handleReservation = (e, tableId, tableImage, tableNumber, tableGuests, tablePrice) => {
+  const handleReservation = (e, tableImage, tableNumber, tableGuests, tablePrice, tableId) => {
     e.preventDefault();
 
     // Store reservation details
-    const reservation = { tableId, tableImage, tableNumber, tableGuests, tablePrice };
+    const reservation = { tableImage, tableNumber, tableGuests, tablePrice, tableId };
 
     handleAddList(reservation);
 
@@ -54,7 +54,7 @@ const Listing = () => {
           <form
             key={list.tableId}
             onSubmit={(e) =>
-              handleReservation(e, list.tableId, list.image, list.tableNumber, list.guests, list.price)
+              handleReservation(e, list.image, list.tableNumber, list.guests, list.price, list.tableId)
             }
           >
             <Card cardStyle="p-5 bg-[#F2F2F2] dark:bg-[#19191B]">

@@ -25,7 +25,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6">
+          <form className="space-y-6" method="post">
             {/* Email Field */}
             <div>
               <Label htmlFor="email" text="Email Address" />

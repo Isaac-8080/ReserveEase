@@ -5,18 +5,18 @@ import { GrGroup } from "react-icons/gr";
 import { MdNumbers } from "react-icons/md";
 import { RiPriceTag3Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
+import Modal from "../components/Modal";
 
 const Reservations = ({handleIsReservationClosed}) => {
-  const { reservationList } = useContext(ReservationsContext);
+  const { reservationList, handleDelete } = useContext(ReservationsContext);
 
   return (
     <div className="flex">
       <div className="bg-white w-full h-screen overflow-auto p-5 md:w-[400px] fixed md:right-0 dark:bg-gray-800 shadow-sm z-20">
 
         <div className="flex flex-row mb-3 items-center justify-between">
-
           <div className="font-bold text-xl">My Reservations</div>
-          <IoMdClose onClick={handleIsReservationClosed} />
+          <IoMdClose onClick={handleIsReservationClosed} className="text-xl" />
         </div>
 
         {reservationList.length === 0 ? (
@@ -24,16 +24,21 @@ const Reservations = ({handleIsReservationClosed}) => {
         ) : (
           reservationList.map((reservedTable) => (
             <Card key={reservedTable.tableId} cardStyle="p-3 mb-3">
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-3">
                 <div className="flex items-center">
-                  <img src={reservedTable.tableImage} className="text-[16px] rounded-md w-30 font-semibold"  />
+                  <img src={reservedTable.tableImage} className="rounded-md w-30"  />
                 </div>
 
-                <div>
+                <div className="w-[100%]">
                   {/* Table Number */}
-                  <div className="flex items-center gap-2">
-                    <MdNumbers className="text-[20px] text-blue-600" />
-                    <p className="text-[16px] font-semibold">Table {reservedTable.tableNumber}</p>
+                  <div className="flex flex-row items-center w-[100%] justify-between">
+                    <div className="flex items-center gap-2">
+                      <MdNumbers className="text-[20px] text-blue-600" />
+                      <p className="text-[16px] font-semibold">Table {reservedTable.tableNumber}</p>
+                    </div>
+                    <div className="">
+                      <Modal onClickAction={() => handleDelete(reservedTable.tableId)} />
+                    </div>
                   </div>
 
                   {/* Guest Capacity */}
@@ -45,7 +50,7 @@ const Reservations = ({handleIsReservationClosed}) => {
                   {/* Price */}
                   <div className="flex items-center gap-2">
                     <RiPriceTag3Line className="text-[20px] text-blue-600" />
-                    <p className="text-[16px] font-semibold text-indigo-700">${reservedTable.tablePrice}</p>
+                    <p className="text-[16px] font-semibold text-indigo-600">${reservedTable.tablePrice}</p>
                   </div>
                 </div>
               </div>

@@ -12,12 +12,19 @@ function App() {
   }, []);
 
   // Debugging: Log reservationList when it updates
-  useEffect(() => {
-    console.log("Updated Reservation List:", reservationList);
-  }, [reservationList]);
+  // useEffect(() => {
+  //   console.log("Updated Reservation List:", reservationList);
+  // }, [reservationList]);
+
+  const handleDelete = (id) => {
+    setReservationList(
+      reservationList.filter((table) => table.tableId !== id)
+    );
+  };
+  
 
   return (
-    <ReservationsContext.Provider value={{ handleAddList, reservationList }}>
+    <ReservationsContext.Provider value={{ handleAddList, reservationList, handleDelete }}>
       <PageLayout />
     </ReservationsContext.Provider>
   );

@@ -59,7 +59,7 @@ const Navbar = () => {
 
       {isNavMenuOpened && (
         <div className="flex p-0 m-0">
-          <div onClick={handleIsNavMenuClosed} className="h-screen w-full bg-black fixed z-10 opacity-10 transition-all ease-in-out duration-1000"></div>
+          <div onClick={handleIsNavMenuClosed} className="h-screen w-full bg-black fixed z-10 opacity-60 transition-all ease-in-out duration-1000"></div>
           <Card cardStyle="fixed right-5 md:right-10 top-15 bg-white dark:bg-gray-800 shadow-sm w-50 z-10">
             <ul>
               <NavLink to="/">
@@ -93,7 +93,7 @@ const Navbar = () => {
       
       {isReservationOpened && (
         <div className="flex m-0 p-0">
-          <div onClick={handleIsReservationClosed} className="h-screen w-full bg-black fixed z-10 opacity-10 transition-all ease-in-out duration-1000"></div>
+          <div onClick={handleIsReservationClosed} className="h-screen w-full bg-black fixed z-10 opacity-60 transition-all ease-in-out duration-1000"></div>
           <Reservations handleIsReservationClosed={handleIsReservationClosed} />
         </div>
       )}
