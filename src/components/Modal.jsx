@@ -13,7 +13,7 @@ const Modal = ({ onClickAction }) => {
       {/* Open Modal Button */}
       <AiOutlineDelete 
         onClick={handleModalOpen} 
-        className="text-xl text-red-500 cursor-pointer -translate-y-1.5" 
+        className="text-2xl text-red-500 cursor-pointer -translate-y-1.5" 
       />
 
       {/* Modal Overlay */}
