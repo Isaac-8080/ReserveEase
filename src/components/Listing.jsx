@@ -57,8 +57,8 @@ const Listing = () => {
               handleReservation(e, list.image, list.tableNumber, list.guests, list.price, list.tableId)
             }
           >
-            <Card cardStyle="p-5 bg-[#F2F2F2] dark:bg-[#19191B]">
-              <img src={list.image} className="w-full h-45 rounded-md object-cover" alt="Table" />
+            <Card cardStyle="bg-white pb-3">
+              <img src={list.image} className="w-full h-45 rounded-t-md object-cover" alt="Table" />
               <div className="px-3 pt-5 space-y-3">
                 {/* Table Number */}
                 <div className="flex items-center gap-2 opacity-80">
