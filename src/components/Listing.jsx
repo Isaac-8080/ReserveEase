@@ -62,26 +62,26 @@ const Listing = () => {
               <div className="px-3 pt-5 space-y-3">
                 {/* Table Number */}
                 <div className="flex items-center gap-2 opacity-80">
-                  <MdNumbers className="text-[20px] font-semibold" />
-                  <p className="text-[16px] font-bold uppercase opacity-90">Table {list.tableNumber}</p>
+                  <MdNumbers className="text-[20px] font-semibold text-gray-900" />
+                  <p className="text-[16px] font-semibold text-gray-900 uppercase opacity-90">Table {list.tableNumber}</p>
                 </div>
 
                 {/* Guest Capacity */}
                 <div className="flex items-center gap-2 opacity-80 mt-5">
-                  <GrGroup className="text-[20px] font-semibold" />
-                  <p className="text-[16px] font-semibold uppercase">{list.guests} guests maximum</p>
+                  <GrGroup className="text-[20px] font-semibold text-gray-900" />
+                  <p className="text-[16px] font-semibold text-gray-900 uppercase">{list.guests} guests maximum</p>
                 </div>
 
                 {/* Status and Price */}
                 <div className="flex gap-3">
                   <div className="flex items-center gap-2 opacity-80">
-                    <BsClock className="text-[20px] font-semibold" />
-                    <p className={`text-[16px] font-semibold uppercase ${isAvailable ? "text-indigo-700" : "line-through text-red-500"}`}>
+                    <BsClock className="text-[20px] font-semibold text-gray-900" />
+                    <p className={`text-[16px] font-semibold text-gray-900 uppercase ${isAvailable ? "text-indigo-700" : "line-through text-red-500"}`}>
                       {list.status}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 opacity-80">
-                    <RiPriceTag3Line className="text-[20px] font-semibold" />
+                    <RiPriceTag3Line className="text-[20px] font-semibold text-gray-900" />
                     <p className="text-[16px] font-semibold uppercase text-indigo-700">{`$${list.price}`}</p>
                   </div>
                 </div>

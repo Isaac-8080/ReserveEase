@@ -12,7 +12,7 @@ const Reservations = ({handleIsReservationClosed}) => {
 
   return (
     <>
-      <div className="bg-white w-full h-screen overflow-auto p-5 md:w-[400px] fixed md:right-0 dark:bg-gray-800 shadow-sm z-20">
+      <div className="bg-white w-full h-screen overflow-auto mt-0 p-5 md:w-[400px] fixed md:right-0 dark:bg-gray-800 shadow-sm z-20">
 
         <div className="flex flex-row mb-3 items-center justify-between">
           <div className="font-bold text-xl">My Reservations</div>
