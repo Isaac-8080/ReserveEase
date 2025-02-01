@@ -12,7 +12,7 @@ const Reservations = ({handleIsReservationClosed}) => {
 
   return (
     <>
-      <div className="bg-white w-full h-screen overflow-auto top-0 p-5 md:w-[400px] fixed md:right-0 dark:bg-gray-800 shadow-sm z-20">
+      <div className="bg-white w-full h-screen overflow-auto top-0 p-5 md:w-[400px] fixed md:right-0 dark:bg-[#111827] shadow-sm z-20">
 
         <div className="flex flex-row mb-3 items-center justify-between">
           <div className="font-bold text-xl">My Reservations</div>
@@ -23,7 +23,7 @@ const Reservations = ({handleIsReservationClosed}) => {
           <p className="text-gray-500"> No reservations yet.</p>
         ) : (
           reservationList.map((reservedTable) => (
-            <Card key={reservedTable.tableId} cardStyle="p-3 mb-3 bg-white dark:bg-[#111827]">
+            <Card key={reservedTable.tableId} cardStyle="p-3 mb-3 bg-white dark:bg-gray-800">
               <div className="flex gap-3">
                 <div className="flex items-center">
                   <img src={reservedTable.tableImage} className="rounded-md w-70"  />
