@@ -6,6 +6,7 @@ import { RiMenu3Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import Reservations from "../pages/Reservations";
 import { ReservationsContext } from "../App";
+import BrandLogo from "./BrandLogo";
 
 const Navbar = () => {
 
@@ -35,10 +36,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex w-full px-5 md:px-10 py-3 fixed dark:bg-[#1B232B] bg-white top-0 opacity-95 z-10">
+      <div className="flex w-full items-center px-5 md:px-10 py-2 fixed dark:bg-[#111827] bg-white top-0 opacity-95 z-10">
         
         <div className="flex-1">
-          <NavLink to="/" className="text-xl font-bold cursor-pointer">ReserveEase</NavLink>
+          <NavLink to="/" className="flex gap-2">
+            <BrandLogo />
+            <p className="text-xl font-bold">ReserveEase</p>
+          </NavLink>
         </div>
 
         {!isNavMenuOpened ? (

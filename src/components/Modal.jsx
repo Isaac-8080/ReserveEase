@@ -21,7 +21,7 @@ const Modal = ({ onClickAction }) => {
         <div className="fixed inset-0 flex items-center justify-center">
           <div className="h-screen w-full bg-black fixed z-10 opacity-60 transition-all ease-in-out duration-1000"></div>
           {/* Modal Card */}
-          <Card cardStyle="p-5 bg-white dark:bg-[#1B232B] rounded-lg shadow-lg w-[80%] max-w-sm relative z-50">
+          <Card cardStyle="p-5 bg-white dark:bg-[#111827] rounded-lg shadow-lg w-[80%] max-w-sm relative z-50">
             <div className="flex flex-col items-center text-center">
               <p className='font-semibold'>This action can't be undone.</p>
               <p className='font-semibold'>Do you want to proceed?</p>

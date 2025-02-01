@@ -1,5 +1,3 @@
-import { CiSearch } from "react-icons/ci"
-import TextInput from "../components/TextInput"
 
 const Hero = () => {
   return (
@@ -20,7 +18,7 @@ const Hero = () => {
         </div>
       </div> */}
 
-      <div className="relative h-90 mt-20 flex flex-col justify-center items-center">
+      <div className="relative h-90 mt-[60px] flex flex-col justify-center items-center">
         <div className="absolute inset-0">
           <img className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Restaurant interior" loading="eager" />
           <div className="absolute inset-0 bg-gray-900/70 mix-blend-multiply"></div>

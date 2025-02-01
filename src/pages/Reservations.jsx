@@ -23,7 +23,7 @@ const Reservations = ({handleIsReservationClosed}) => {
           <p className="text-gray-500"> No reservations yet.</p>
         ) : (
           reservationList.map((reservedTable) => (
-            <Card key={reservedTable.tableId} cardStyle="p-3 mb-3 bg-white dark:bg-[#1B232B]">
+            <Card key={reservedTable.tableId} cardStyle="p-3 mb-3 bg-white dark:bg-[#111827]">
               <div className="flex gap-3">
                 <div className="flex items-center">
                   <img src={reservedTable.tableImage} className="rounded-md w-70"  />
