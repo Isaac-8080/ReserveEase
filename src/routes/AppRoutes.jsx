@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import NotFound from "../pages/NotFound";
-import Reservations from "../pages/Reservations";
-import Tables from "../pages/Tables";
+import Home from "../pages/AdHome";
+import Login from "../pages/AdLogin";
+import Register from "../pages/AdRegister";
+import NotFound from "../pages/AdNotFound";
+import Reservations from "../pages/AdReservations";
+import Tables from "../pages/AdTables";
 
 function AppRoutes() {
   return (

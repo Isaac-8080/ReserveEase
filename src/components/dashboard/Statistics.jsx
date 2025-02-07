@@ -5,7 +5,7 @@ import {
   BiBook,
   BiDollarCircle,
 } from "react-icons/bi";
-import Card from "./Card";
+import Card from "./ReservationCard";
 
 function Statistics() {
   return (
