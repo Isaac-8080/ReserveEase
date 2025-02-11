@@ -1,18 +1,66 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../components/Button";
 import Label from "../components/Label";
 import TextInput from "../components/TextInput";
-import { useState } from "react";
 import { GoEye } from "react-icons/go";
 import { LuEyeClosed } from "react-icons/lu";
 import { FiLock } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
+import axios from "axios"; 
 
 const Login = () => {
   const [passwordType, setPasswordType] = useState("password");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState(""); 
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
+  
   const togglePasswordVisibility = () => {
-    setPasswordType((prevType) => (prevType === "password" ? "text" : "password"));
+    setPasswordType((prevType) =>
+      prevType === "password" ? "text" : "password"
+    );
+  };
+
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+ 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/signin/", 
+        userData,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (response.status === 200) {
+        setSuccessMessage("Login successful!");
+        setError(""); 
+      }
+    } catch (err) {
+      // Handle error
+      console.error("Login Error:", err);
+      setError(err.response?.data?.error || "An error occurred during login.");
+      setSuccessMessage("");
+    }
   };
 
   return (
@@ -25,8 +73,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" method="post">
-            {/* Email Field */}
+          <form className="space-y-6" method="post" onSubmit={handleSubmit}>
             <div>
               <Label htmlFor="email" text="Email Address" />
               <div className="mt-2 flex items-center pr-3 relative rounded-lg border border-gray-300 focus-within:border-indigo-600 bg-white">
@@ -40,16 +87,19 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </div>
             </div>
-
-            {/* Password Field */}
             <div>
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" text="Password" />
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a
+                    href="#"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
                     Forgot password?
                   </a>
                 </div>
@@ -66,21 +116,36 @@ const Login = () => {
                   type={passwordType}
                   autoComplete="current-password"
                   placeholder="Enter your password"
+                  value={password}
+                  onChange={handlePasswordChange}
                 />
-                <div onClick={togglePasswordVisibility} className="cursor-pointer">
-                  {passwordType === "password" ? <GoEye className="text-xl text-gray-500" /> : <LuEyeClosed className="text-xl text-gray-500" />}
+                <div
+                  onClick={togglePasswordVisibility}
+                  className="cursor-pointer"
+                >
+                  {passwordType === "password" ? (
+                    <GoEye className="text-xl text-gray-500" />
+                  ) : (
+                    <LuEyeClosed className="text-xl text-gray-500" />
+                  )}
                 </div>
               </div>
             </div>
-
             <div>
               <Button type="submit" text="Sign in" />
             </div>
           </form>
+          {error && <p className="mt-4 text-red-500">{error}</p>}
+          {successMessage && (
+            <p className="mt-4 text-green-500">{successMessage}</p>
+          )}
 
           <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-[#F2F2F2]">
             Not a member?{" "}
-            <NavLink to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <NavLink
+              to="/register"
+              className="font-semibold text-indigo-600 hover:text-indigo-500"
+            >
               Sign up!
             </NavLink>
           </p>
