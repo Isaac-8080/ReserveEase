@@ -54,10 +54,10 @@ const Register = () => {
     console.log("User Data:", userData); 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/auth/register/", 
+        "https://reserve-lpak.onrender.com/api/auth/register/",
         userData,
         {
-          headers:{"Content-Type":"application/json"},
+          headers: { "Content-Type": "application/json" },
         }
       );
 
