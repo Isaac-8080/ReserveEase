@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import axios from "axios"; // Import axios for making HTTP requests
 import Button from "../components/Button";
 import Label from "../components/Label";
 import TextInput from "../components/TextInput";
-import { useState } from "react";
 import { LuEyeClosed } from "react-icons/lu";
 import { GoEye } from "react-icons/go";
 import { FaRegUser } from "react-icons/fa";
@@ -11,9 +12,67 @@ import { FiLock } from "react-icons/fi";
 
 const Register = () => {
   const [passwordType, setPasswordType] = useState("password");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const togglePasswordVisibility = () => {
-    setPasswordType((prevType) => (prevType === "password" ? "text" : "password"));
+    setPasswordType((prevType) =>
+      prevType === "password" ? "text" : "password"
+    );
+  };
+  const handleFullNameChange = (e) => {
+    console.log("Full Name:", e.target.value); 
+    setFullName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    console.log("Email:", e.target.value);
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    console.log("Password:", e.target.value);
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    console.log("Form submitted");
+    e.preventDefault();
+   
+   
+    console.log("Form Values:", { fullName, email, password });
+    
+   
+    const userData = {
+      first_name: fullName,
+      email: email,
+      password: password,
+    };
+    console.log("User Data:", userData); 
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/auth/register/", 
+        userData,
+        {
+          headers:{"Content-Type":"application/json"},
+        }
+      );
+
+      if (response.status === 201) {
+        setSuccessMessage("Registration successful. You can now log in.");
+        setError(""); 
+      }
+    } catch (err) {
+      
+      console.error("Registration Error:", err);
+      setError(
+        err.response?.data?.error || "An error occurred during registration."
+      );
+      setSuccessMessage(""); 
+    }
   };
 
   return (
@@ -26,8 +85,7 @@ const Register = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" method="post">
-            {/* Name */}
+          <form className="space-y-6" method="post" onSubmit={handleSubmit}>
             <div>
               <Label htmlFor="fullName" text="Full Name" />
               <div className="mt-2 flex items-center pr-3 relative rounded-lg border border-gray-300 focus-within:border-indigo-600 bg-white">
@@ -41,11 +99,11 @@ const Register = () => {
                   type="text"
                   autoComplete="text"
                   placeholder="Enter your full name"
+                  value={fullName}
+                  onChange={handleFullNameChange}
                 />
               </div>
             </div>
-
-            {/* Email */}
             <div>
               <Label htmlFor="email" text="Email Address" />
               <div className="mt-2 flex items-center pr-3 relative rounded-lg border border-gray-300 focus-within:border-indigo-600 bg-white">
@@ -59,11 +117,11 @@ const Register = () => {
                   type="email"
                   autoComplete="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </div>
             </div>
-
-            {/* Password */}
             <div>
               <div className="flex items-center justify-between">
                 <Label htmlFor="password" text="Password" />
@@ -80,18 +138,30 @@ const Register = () => {
                   type={passwordType}
                   autoComplete="current-password"
                   placeholder="Enter your password"
+                  value={password}
+                  onChange={handlePasswordChange}
                 />
-                <div onClick={togglePasswordVisibility} className="cursor-pointer">
-                  {passwordType === "password" ? <GoEye className="text-xl text-gray-500" /> : <LuEyeClosed className="text-xl text-gray-500" />}
+                <div
+                  onClick={togglePasswordVisibility}
+                  className="cursor-pointer"
+                >
+                  {passwordType === "password" ? (
+                    <GoEye className="text-xl text-gray-500" />
+                  ) : (
+                    <LuEyeClosed className="text-xl text-gray-500" />
+                  )}
                 </div>
               </div>
             </div>
-
-            {/* Submit Button */}
             <div>
               <Button type="submit" text="Create account" />
             </div>
           </form>
+
+          {error && <p className="mt-4 text-red-500">{error}</p>}
+          {successMessage && (
+            <p className="mt-4 text-green-500">{successMessage}</p>
+          )}
 
           <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-[#F2F2F2]">
             Already a member?{" "}
