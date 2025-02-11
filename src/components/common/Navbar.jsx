@@ -22,7 +22,7 @@ import { NavLink } from "react-router-dom";
         </div>
       
         <div className="navbar bg-base-100">
-          <div className="flex-1">
+          <div className="pt-10 flex-1">
             <Link to="/admin" className="btn btn-ghost normal-case text-xl">
               <BiRestaurant className="mr-2" /> Restaurant Admin
             </Link>
@@ -46,9 +46,9 @@ import { NavLink } from "react-router-dom";
                 </Link>
               </li>
               <li>
-                <button className="btn btn-ghost">
+                <Link to="/" className="btn btn-ghost">
                   <BiLogOut className="mr-2" /> Logout
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

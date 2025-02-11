@@ -44,7 +44,7 @@ function Reservations() {
     ];
   return (
     <DashboardLayout>
-      <div className="flex justify-between items-center mb-5">
+      <div className="pt-25 flex justify-between items-center mb-5">
         <h2 className="text-3xl font-bold">Reservations</h2>
         <Button onClick={() => setIsModalOpen(true)} className="btn-primary">
           Create Reservation

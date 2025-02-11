@@ -24,14 +24,15 @@ import {
   RouterProvider 
 } from "react-router-dom";
 import ListLoading from "../components/ListLoading";
-import { MdAddHome } from "react-icons/md";
 
 function PageLayout() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
+      <>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Home />} />
+        </Route>
         <Route
           path="home"
           element={
@@ -40,6 +41,14 @@ function PageLayout() {
             </SuspenseWrapper>
           }
         />
+        <Route
+            path="register"
+            element={
+              <SuspenseWrapper fallback={<Loading />}>
+                <Register />
+              </SuspenseWrapper>
+            }
+          />
         <Route
           path="ad_register"
           element={
@@ -66,15 +75,14 @@ function PageLayout() {
           />
           
           
-          <Route
-            path="tables"
-            element={
-              <SuspenseWrapper fallback={<Loading />}>
-                <AdTables />
-              </SuspenseWrapper>
-            }
-          />
-
+        <Route
+          path="tables"
+          element={
+            <SuspenseWrapper fallback={<Loading />}>
+              <AdTables />
+            </SuspenseWrapper>
+          }
+        />
         <Route
           path="admin"
           element={
@@ -92,22 +100,9 @@ function PageLayout() {
               </SuspenseWrapper>
             }
           /> 
-        <Route
-            path="Register"
-            element={
-              <SuspenseWrapper fallback={<Loading />}>
-                <AdRegister />
-              </SuspenseWrapper>
-            }
-          />
-          
-
-          
-        
-        <Route path="*" element={<PageNotFound />} />
         </Route>
-        <Route path="*" element={<AdNotFound />} />
-      </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </>
     )
   );
 
@@ -119,3 +114,4 @@ function PageLayout() {
 }
 
 export default PageLayout;
+

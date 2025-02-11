@@ -55,7 +55,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink to="/register">
               <li onClick={handleIsClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
-                Resgister
+                Register
               </li>
             </NavLink>
             <hr className="border-[lightgray]" />
