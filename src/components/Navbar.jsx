@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { RiMenu3Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import Reservations from "../pages/Reservations";
-import { ReservationsContext } from "../App";
+import { ReservationsContext } from "../contexts/ReservationContext";
 import BrandLogo from "./BrandLogo";
 
 const Navbar = () => {

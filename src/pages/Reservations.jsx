@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Card from "../components/Card";
-import { ReservationsContext } from "../App";
+import { ReservationsContext } from "../contexts/ReservationContext";
 import { GrGroup } from "react-icons/gr";
 import { MdNumbers } from "react-icons/md";
 import { RiPriceTag3Line } from "react-icons/ri";

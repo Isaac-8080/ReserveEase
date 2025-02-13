@@ -9,6 +9,7 @@ const Register = React.lazy(() => import('../pages/Register'));
 const Login = React.lazy(() => import('../pages/Login'));
 const Reservations = React.lazy(() => import('../pages/Reservations'));
 const Home = React.lazy(() => import('../pages/Home'));
+import UserDashboard from "../pages/UserDashboard"; // Example of a protected route
 
 import { 
   createBrowserRouter, 
@@ -65,6 +66,8 @@ function PageLayout() {
             </SuspenseWrapper>
           }
         />
+
+        <Route path="/dashboard" element={<UserDashboard />} />
 
         <Route path="*" element={<PageNotFound />} />
 

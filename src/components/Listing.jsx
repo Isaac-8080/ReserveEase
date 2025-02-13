@@ -12,7 +12,7 @@ import tableThree from "../assets/tableThree.jpg";
 import tableFour from "../assets/tableFour.jpg";
 import tableFive from "../assets/tableFive.jpg";
 import tableSix from "../assets/tableSix.jpg";
-import { ReservationsContext } from "../App";
+import { ReservationsContext } from "../contexts/ReservationContext";
 
 // Initial Listing Data
 const initialListing = [

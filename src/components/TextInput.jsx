@@ -8,7 +8,6 @@ const TextInput = (props) => {
         type={props.type}
         required
         placeholder={props.placeholder}
-        autoComplete={props.autoComplete}
         className={props.inputStyle}
       />
     </>
