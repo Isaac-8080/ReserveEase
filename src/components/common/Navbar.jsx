@@ -35,7 +35,7 @@ import { NavLink } from "react-router-dom";
                     </Link>
                 </li>
               <li>
-                <Link to="/reservations" className="btn btn-ghost">
+                <Link to="/ad_reservations" className="btn btn-ghost">
                   <BiBook className="mr-2" /> Reservations
                 </Link>
               </li>

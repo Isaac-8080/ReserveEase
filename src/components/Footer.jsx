@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#F2F2F2] dark:bg-[#1B232B] py-8">
+      <footer className="bg-[#F2F2F2] dark:bg-[#111827] py-8">
 
         {/* Copyright Section */}
         <div className="pt-4 text-center">

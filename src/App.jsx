@@ -1,19 +1,16 @@
-//import React from "react"
-import PageLayout from "./layouts/PageLayout"
-//import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { AuthProvider } from "./contexts/AuthContext"; // Import AuthProvider
+import PageLayout from "./layouts/PageLayout";
+import ReservationProvider from "./contexts/ReservationContext";
 
-//import AppRoutes from "./routes/AppRoutes"
-function App() {
-
-
+const App = () => {
   return (
-     <>
-     <PageLayout />
-     </>
- 
-    
-  )
-}
+    <AuthProvider>
+      <ReservationProvider>
+        <PageLayout />
+      </ReservationProvider>
+    </AuthProvider>
+  );
+};
 
-export default App
+export default App;
 
