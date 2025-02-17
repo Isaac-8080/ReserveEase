@@ -1,14 +1,14 @@
-import { AuthProvider } from "./contexts/AuthContext"; // Import AuthProvider
+// import { AuthProvider } from "./contexts/AuthContext"; // Import AuthProvider
 import PageLayout from "./layouts/PageLayout";
 import ReservationProvider from "./contexts/ReservationContext";
 
 const App = () => {
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <ReservationProvider>
         <PageLayout />
       </ReservationProvider>
-    </AuthProvider>
+    // </AuthProvider>
   );
 };
 

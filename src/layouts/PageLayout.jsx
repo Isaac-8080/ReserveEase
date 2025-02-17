@@ -25,6 +25,7 @@ import {
   Route, 
   RouterProvider 
 } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
 
 function PageLayout() {
 
@@ -74,7 +75,7 @@ function PageLayout() {
           }
         />
 
-        <Route path="/dashboard" element={<UserDashboard />} />
+        <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
       
 
         <Route

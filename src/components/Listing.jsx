@@ -88,7 +88,7 @@ const Listing = () => {
 
                 {/* Reserve Button */}
                 <div>
-                  <Button type="submit" text={isAvailable ? "Reserve table" : "Added to list"} disabled={!isAvailable ? "disabled" : ""} />
+                  <Button type="submit" text={isAvailable ? "Reserve table" : "Added to list"} />
                 </div>
               </div>
             </Card>
