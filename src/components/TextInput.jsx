@@ -9,8 +9,8 @@ const TextInput = ({ value, onChange, ...props }) => {
         required
         placeholder={props.placeholder}
         className={props.inputStyle}
-        value={value}
-        onChange={onChange}
+        value={value} 
+        onChange={onChange} 
       />
     </>
   );

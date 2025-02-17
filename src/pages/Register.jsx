@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios"; // Import axios for making HTTP requests
 import Button from "../components/Button";
 import Label from "../components/Label";
@@ -27,7 +27,7 @@ const Register = () => {
     );
   };
   const handleFullNameChange = (e) => {
-    console.log("Full Name:", e.target.value);
+    console.log("Full Name:", e.target.value); 
     setFullName(e.target.value);
   };
 
@@ -44,15 +44,17 @@ const Register = () => {
   const handleSubmit = async (e) => {
     console.log("Form submitted");
     e.preventDefault();
-
+   
+   
     console.log("Form Values:", { fullName, email, password });
-
+    
+   
     const userData = {
       first_name: fullName,
       email: email,
       password: password,
     };
-    console.log("User Data:", userData);
+    console.log("User Data:", userData); 
     try {
       const response = await axios.post(
         "https://reserve-lpak.onrender.com/api/auth/register/",
@@ -64,15 +66,15 @@ const Register = () => {
 
       if (response.status === 201) {
         setSuccessMessage("Registration successful. You can now log in.");
-        navigate("/dashboard")
-        setError("");
+        setError(""); 
       }
     } catch (err) {
+      
       console.error("Registration Error:", err);
       setError(
         err.response?.data?.error || "An error occurred during registration."
       );
-      setSuccessMessage("");
+      setSuccessMessage(""); 
     }
   };
 
