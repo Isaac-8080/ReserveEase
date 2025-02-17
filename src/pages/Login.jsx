@@ -7,32 +7,36 @@ import { GoEye } from "react-icons/go";
 import { LuEyeClosed } from "react-icons/lu";
 import { FiLock } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
-import axios from "axios";
+import axios from "axios"; 
 
 const Login = () => {
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const [passwordType, setPasswordType] = useState("password");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [password, setPassword] = useState(""); 
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
+  
   const togglePasswordVisibility = () => {
     setPasswordType((prevType) =>
       prevType === "password" ? "text" : "password"
     );
   };
 
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
+ 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -53,7 +57,7 @@ const Login = () => {
       if (response.status === 200) {
         setSuccessMessage("Login successful!");
         navigate("/dashboard")
-        setError("");
+        setError(""); 
       }
     } catch (err) {
       // Handle error
@@ -74,7 +78,6 @@ const Login = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" method="post" onSubmit={handleSubmit}>
-          <form className="space-y-6" method="post" onSubmit={handleSubmit}>
             <div>
               <Label htmlFor="email" text="Email Address" />
               <div className="mt-2 flex items-center pr-3 relative rounded-lg border border-gray-300 focus-within:border-indigo-600 bg-white">
@@ -90,8 +93,6 @@ const Login = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={handleEmailChange}
-                  value={email}
-                  onChange={handleEmailChange}
                 />
               </div>
             </div>
@@ -103,15 +104,10 @@ const Login = () => {
                     href="#"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
                     Forgot password?
                   </a>
                 </div>
               </div>
-
 
               <div className="mt-2 flex items-center pr-3 relative rounded-lg border border-gray-300 focus-within:border-indigo-600 bg-white">
                 <div className="pl-3 text-gray-500">
@@ -126,18 +122,7 @@ const Login = () => {
                   placeholder="Enter your password"
                   value={password}
                   onChange={handlePasswordChange}
-                  value={password}
-                  onChange={handlePasswordChange}
                 />
-                <div
-                  onClick={togglePasswordVisibility}
-                  className="cursor-pointer"
-                >
-                  {passwordType === "password" ? (
-                    <GoEye className="text-xl text-gray-500" />
-                  ) : (
-                    <LuEyeClosed className="text-xl text-gray-500" />
-                  )}
                 <div
                   onClick={togglePasswordVisibility}
                   className="cursor-pointer"
@@ -158,17 +143,9 @@ const Login = () => {
           {successMessage && (
             <p className="mt-4 text-green-500">{successMessage}</p>
           )}
-          {error && <p className="mt-4 text-red-500">{error}</p>}
-          {successMessage && (
-            <p className="mt-4 text-green-500">{successMessage}</p>
-          )}
 
           <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-[#F2F2F2]">
             Not a member?{" "}
-            <NavLink
-              to="/register"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
-            >
             <NavLink
               to="/register"
               className="font-semibold text-indigo-600 hover:text-indigo-500"

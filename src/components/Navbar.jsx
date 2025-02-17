@@ -80,7 +80,12 @@ const Navbar = () => {
               <hr className="border-[lightgray]" />
               <NavLink to="/login">
                 <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
-                  Log In
+                  User Log In
+                </li>
+              </NavLink>
+              <NavLink to="/admin/login">
+                <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                  Admin Log In
                 </li>
               </NavLink>
               <NavLink to="/register">
