@@ -1,5 +1,5 @@
 
-const TextInput = (props) => {
+const TextInput = ({ value, onChange, ...props }) => {
   return (
     <>
       <input
@@ -9,9 +9,11 @@ const TextInput = (props) => {
         required
         placeholder={props.placeholder}
         className={props.inputStyle}
+        value={value}
+        onChange={onChange}
       />
     </>
-  )
-}
+  );
+};
 
 export default TextInput
