@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Hero({ title, subtitle, className, image }) {
   return (
     <div
-      className={`hero min-h-screen bg-cover bg-center ${className}`}
+      className={`hero min-h-70 mt-[60px] bg-cover bg-center ${className}`}
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

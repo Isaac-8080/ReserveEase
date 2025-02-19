@@ -22,7 +22,7 @@ function Statistics() {
   }, [reservationList]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8 mx-10 md:mx-20">
       <Card
         title="Reservations Today"
         content={statistics.reservationsToday}

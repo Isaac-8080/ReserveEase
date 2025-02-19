@@ -16,12 +16,13 @@ import { ReservationsContext } from "../contexts/ReservationContext";
 
 // Initial Listing Data
 const initialListing = [
-  { tableNumber: 1, guests: 7, status: "available", price: 30, image: tableOne, tableId: uuid() },
-  { tableNumber: 2, guests: 5, status: "available", price: 30, image: tableTwo, tableId: uuid() },
-  { tableNumber: 3, guests: 10, status: "available", price: 30, image: tableThree, tableId: uuid() },
-  { tableNumber: 4, guests: 10, status: "available", price: 30, image: tableFour, tableId: uuid() },
+  { tableNumber: 1, guests: 7, status: "available", price: 130, image: tableOne, tableId: uuid() },
+  { tableNumber: 2, guests: 5, status: "available", price: 100, image: tableTwo, tableId: uuid() },
+  { tableNumber: 3, guests: 10, status: "available", price: 200, image: tableThree, tableId: uuid() },
+  { tableNumber: 4, guests: 10, status: "available", price: 200, image: tableFour, tableId: uuid() },
   { tableNumber: 5, guests: 2, status: "available", price: 30, image: tableFive, tableId: uuid() },
-  { tableNumber: 6, guests: 3, status: "available", price: 30, image: tableSix, tableId: uuid() },
+  { tableNumber: 6, guests: 3, status: "available", price: 75, image: tableSix, tableId: uuid() },
+  // { tableNumber: 6, guests: 3, status: "available", price: 75, image: tableSix, tableId: uuid() },
 ];
 
 const Listing = () => {

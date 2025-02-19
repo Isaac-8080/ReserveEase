@@ -6,16 +6,18 @@ import { MdNumbers } from "react-icons/md";
 import { RiPriceTag3Line } from "react-icons/ri";
 import Modal from "../components/Modal";
 import { NavLink } from "react-router-dom";
-import Listing from "../components/Listing";
+// import Listing from "../components/Listing";
+// import Button from "../components/Button";
 
 const UserDashboard = () => {
   const { reservationList, handleDelete } = useContext(ReservationsContext);
 
   return (
     <div className="bg-white w-full p-5 mt-[60px] dark:bg-[#111827]">
-      <div className="mb-5 mx-5 md:mx-20">
-        {/* <div className="font-bold text-2xl mb-5">Dashboard</div> */}
+      <div className="mb-5 mx-5 md:mx-20 flex items-center justify-between">
         <div className="font-bold text-2xl ">My Reservations</div>
+        {/* {reservationList.length > 0 ? <Button type="button" text="Book table" btnClassList=""></Button> : ""} */}
+        
       </div>
 
 
@@ -31,10 +33,10 @@ const UserDashboard = () => {
             <Listing />
           </div> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 h-fit mx-5 md:mx-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 h-fit md:mx-20">
             {reservationList.map((reservedTable) => (
               <Card key={reservedTable.tableId} cardStyle="p-3 bg-white dark:bg-gray-800">
-                <div className="flex gap-10">
+                <div className="flex gap-5 md:gap-10">
                   <img src={reservedTable.tableImage} className="rounded-md w-[150px]" alt="Table" />
 
                   <div className="w-full">

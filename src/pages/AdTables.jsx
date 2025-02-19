@@ -47,8 +47,8 @@ function Tables() {
     }
   return (
     <DashboardLayout>
-      <h2 className="pt-25 text-3xl font-bold mb-5">Restaurant Tables</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <h2 className="pt-25 text-3xl font-bold mb-5 mx-10 md:mx-20">Restaurant Tables</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-10 md:mx-20">
         {tables.map((table) => (
           <TableStatus key={table.id} table={table} />
         ))}

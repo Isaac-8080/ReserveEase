@@ -4,10 +4,10 @@ import { ReservationsContext } from "../contexts/ReservationContext";
 import { GrGroup } from "react-icons/gr";
 import { MdNumbers } from "react-icons/md";
 import { RiPriceTag3Line } from "react-icons/ri";
-import { IoMdClose } from "react-icons/io";
 import Modal from "../components/Modal";
 
 const Reservations = ({handleIsReservationClosed}) => {
+
   const { reservationList, handleDelete } = useContext(ReservationsContext);
 
   return (
@@ -16,7 +16,6 @@ const Reservations = ({handleIsReservationClosed}) => {
 
         <div className="flex flex-row mb-3 items-center justify-between">
           <div className="font-bold text-xl">My Reservations</div>
-          <IoMdClose onClick={handleIsReservationClosed} className="text-xl -translate-y-3" />
         </div>
 
         {reservationList.length === 0 ? (

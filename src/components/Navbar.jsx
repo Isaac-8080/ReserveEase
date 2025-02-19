@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { RiMenu3Line } from "react-icons/ri";
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
   const { reservationList } = useContext(ReservationsContext);
+  const location = useLocation();
 
   useEffect(() => {
     const checkAuthStatus = () => {
@@ -22,7 +23,6 @@ const Navbar = () => {
     checkAuthStatus();
 
     const storageListener = () => checkAuthStatus();
-
     window.addEventListener("storage", storageListener);
 
     return () => window.removeEventListener("storage", storageListener);
@@ -67,12 +67,12 @@ const Navbar = () => {
           <Card cardStyle="fixed right-5 md:right-10 top-15 bg-white dark:bg-gray-800 shadow-sm w-50 z-10">
             <ul>
               <NavLink to="/">
-                <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                   Home
                 </li>
               </NavLink>
               <NavLink to="/dashboard">
-                <li onClick={handleIsNavMenuClosed} className="flex justify-between py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                <li onClick={handleIsNavMenuClosed} className="flex justify-between py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                   My Reservations
                   <div className={`${reservationList.length > 0 ? "bg-blue-400 text-white" : ""} text-md border border-gray-300 px-2 rounded-full`}>
                     {reservationList.length}
@@ -81,24 +81,24 @@ const Navbar = () => {
               </NavLink>
               <hr className="border-[lightgray]" />
 
-              {isAuthenticated ? (
-                <li onClick={handleLogout} className="py-1.5 px-5 hover:bg-red-500 cursor-pointer opacity-90 hover:opacity-100 text-red-600">
+              {location.pathname === "/dashboard" || isAuthenticated ? (
+                <li onClick={handleLogout} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100 text-red-600">
                   Logout
                 </li>
               ) : (
                 <>
                   <NavLink to="/login">
-                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                       User Log In
                     </li>
                   </NavLink>
                   <NavLink to="/admin/login">
-                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                       Admin Log In
                     </li>
                   </NavLink>
                   <NavLink to="/register">
-                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+                    <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                       Register
                     </li>
                   </NavLink>
@@ -106,7 +106,7 @@ const Navbar = () => {
               )}
 
               <hr className="border-[lightgray]" />
-              <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] cursor-pointer opacity-90 hover:opacity-100">
+              <li onClick={handleIsNavMenuClosed} className="py-1.5 px-5 hover:bg-[#F2F2F2] dark:hover:bg-transparent cursor-pointer opacity-90 hover:opacity-100">
                 Help
               </li>
             </ul>
