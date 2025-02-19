@@ -14,7 +14,7 @@ const UserDashboard = () => {
 
   return (
     <div className="bg-white w-full p-5 mt-[60px] dark:bg-[#111827]">
-      <div className="mb-5 mx-5 md:mx-20 flex items-center justify-between">
+      <div className="mb-5 md:mx-20 flex items-center justify-between">
         <div className="font-bold text-2xl ">My Reservations</div>
         {/* {reservationList.length > 0 ? <Button type="button" text="Book table" btnClassList=""></Button> : ""} */}
         
@@ -27,7 +27,7 @@ const UserDashboard = () => {
           <NavLink to="/" className="border rounded bg-black dark:bg-white dark:text-black text-center text-white p-2 mt-5">Reserve table</NavLink>
         </div>
       ) : (
-        <div className="flex justify-between">
+        <div className="">
 
           {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5 md:px-20 pb-15 font-bold text-4xl">
             <Listing />
